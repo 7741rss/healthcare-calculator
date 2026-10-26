@@ -1,0 +1,87 @@
+/**
+ * Santorini Breeze 공식 디자인 토큰 (design-tokens.css)
+ * 60-30-10 배색 황금비율 적용
+ */
+
+:root {
+  /* 60% Background & Base */
+  --color-soft-white: #FAFCFF;         /* 웹 전체 기본 배경 (60%) */
+  --color-mediterranean-haze: #E8F3F8; /* 카드/컨테이너 배경, 기준표 박스 베이스 (30%) */
+  --color-pure-white: #FFFFFF;         /* 콘텐츠 카드, 입력 텍스트 박스 */
+
+  /* 30% Text & Structure */
+  --color-deep-cobalt-navy: #0A2540;   /* 헤드라인, 메인 타이틀, 본문 핵심 텍스트, 푸터 */
+  --color-aegean-slate: #1D6A96;       /* 서브 헤더, 보조 메뉴, 라인, 게이지바 트랙 */
+  --color-muted-harbor: #5A7184;       /* 설명 문구, 부가 안내, 메타 정보, 비활성 텍스트 */
+
+  /* 10% Accent & Identity (CTA) */
+  --color-santorini-blue: #006699;     /* 메인 액션 버튼(CTA), 활성 탭/버튼, 대표 핀 */
+  --color-cobalt-coast: #0047AB;       /* 버튼 호버(Hover), 최상단 헤더 그라데이션, 강조 뱃지 */
+  --color-riviera-aqua: #0096B7;       /* 스탬프 뱃지(2026 최신 법령 반영), 링크 강조, 서브 CTA */
+
+  /* 기능 상태색 (Santorini 톤 앤 매너 조화) */
+  --color-emerald-pass: #059669;
+  --color-emerald-bg: #ECFDF5;
+  --color-emerald-border: #A7F3D0;
+
+  --color-rose-fail: #E11D48;
+  --color-rose-bg: #FFF1F2;
+  --color-rose-border: #FECDD3;
+
+  --color-amber-warn: #D97706;
+  --color-amber-bg: #FFFBEB;
+  --color-amber-border: #FDE68A;
+
+  /* 시맨틱 테마 변수 매핑 */
+  --bg-app: var(--color-soft-white);
+  --surface-card: var(--color-pure-white);
+  --surface-card-sub: var(--color-mediterranean-haze);
+  --text-main: var(--color-deep-cobalt-navy);
+  --text-sub: var(--color-aegean-slate);
+  --text-muted: var(--color-muted-harbor);
+  --border-subtle: #D8E5EE;
+  --border-focus: var(--color-santorini-blue);
+
+  /* 레거시/컴포넌트 호환 매핑 */
+  --primary-50: var(--color-mediterranean-haze);
+  --primary-100: #D3E8F4;
+  --primary-200: #B8DBEC;
+  --primary-500: var(--color-santorini-blue);
+  --primary-600: var(--color-cobalt-coast);
+  --primary-700: #003682;
+  --primary-900: var(--color-deep-cobalt-navy);
+
+  --slate-50: var(--color-soft-white);
+  --slate-100: var(--color-mediterranean-haze);
+  --slate-200: #D8E5EE;
+  --slate-300: #B8CBD8;
+  --slate-400: var(--color-muted-harbor);
+  --slate-500: #465B6D;
+  --slate-600: #314555;
+  --slate-700: var(--color-aegean-slate);
+  --slate-800: #102C48;
+  --slate-900: var(--color-deep-cobalt-navy);
+
+  /* 폰트 & 타이포그래피 */
+  --font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Apple SD Gothic Neo", "Inter", "Segoe UI", Roboto, sans-serif;
+  
+  /* 그림자 (부드럽고 세련된 elevation) */
+  --shadow-sm: 0 1px 3px 0 rgba(10, 37, 64, 0.05);
+  --shadow-md: 0 4px 10px -2px rgba(10, 37, 64, 0.07), 0 2px 4px -2px rgba(10, 37, 64, 0.04);
+  --shadow-lg: 0 10px 20px -3px rgba(10, 37, 64, 0.08), 0 4px 6px -4px rgba(10, 37, 64, 0.04);
+  --shadow-glow-blue: 0 0 20px rgba(0, 102, 153, 0.25);
+  --shadow-glow-emerald: 0 0 20px rgba(5, 150, 105, 0.25);
+
+  /* 라운딩 */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+  --radius-full: 9999px;
+
+  /* 트랜지션 */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+  --transition-slow: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+

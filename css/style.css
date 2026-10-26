@@ -1,0 +1,517 @@
+/**
+ * 메인 애플리케이션 레이아웃 및 스마트폰(iPhone / Galaxy) 최적화 스타일 (style.css)
+ * Santorini Breeze 공식 테마 (60-30-10 황금비율)
+ */
+
+@import './design-tokens.css?v=20260920_08';
+@import './components.css?v=20261026_03';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-app);
+  color: var(--color-deep-cobalt-navy);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100%;
+  min-height: 100dvh;
+  margin: 0;
+  padding: 0;
+  padding-bottom: max(16px, env(safe-area-inset-bottom, 16px));
+  overscroll-behavior-y: none;
+  overflow-x: hidden;
+}
+
+/* ==========================================================================
+   스마트폰 최적화 컨테이너 (iPhone 13 이상 표준 규격: 390px ~ 430px)
+   ========================================================================== */
+.app-container {
+  width: 100%;
+  max-width: 430px;
+  margin: 0 auto;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: var(--color-soft-white);
+  box-shadow: 0 0 35px rgba(10, 37, 64, 0.08);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* ==========================================================================
+   앱 헤더 (위아래 1/3 확장 및 모든 페이지 공통 적용)
+   ========================================================================== */
+.app-header {
+  background: linear-gradient(135deg, var(--color-deep-cobalt-navy) 0%, var(--color-cobalt-coast) 100%);
+  color: white;
+  padding: max(22px, env(safe-area-inset-top, 22px)) max(16px, env(safe-area-inset-right, 16px)) 20px max(16px, env(safe-area-inset-left, 16px));
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 16px rgba(10, 37, 64, 0.2);
+  transition: all var(--transition-normal);
+}
+
+.header-brand-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2px;
+}
+
+.header-brand-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 0;
+}
+
+.header-yellow-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11.5px;
+  font-weight: 800;
+  background: #F59E0B;
+  color: #0F172A;
+  padding: 4px 11px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 2px 6px rgba(245, 158, 11, 0.35);
+  line-height: 1;
+  flex-shrink: 0;
+  letter-spacing: -0.2px;
+}
+
+.header-info-icon-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 8px;
+  color: #FFFFFF;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(10, 37, 64, 0.15);
+}
+
+.header-info-icon-badge svg {
+  stroke: #FFFFFF;
+}
+
+.brand-badge {
+  font-size: 10.5px;
+  font-weight: 800;
+  background: var(--color-riviera-aqua);
+  color: white;
+  padding: 2.5px 9px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.2px;
+  box-shadow: 0 2px 5px rgba(0, 150, 183, 0.3);
+}
+
+.app-title {
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: -0.4px;
+  color: var(--color-pure-white);
+  margin: 0;
+  line-height: 1.25;
+}
+
+.app-tagline {
+  font-size: 11.5px;
+  opacity: 0.92;
+  color: #D3E8F4;
+  margin: 6px 0 0 0;
+  letter-spacing: -0.2px;
+}
+
+/* 공통입력 헤더 아래 [세대 통합형] 인포그래픽 실시간 요약 바 (제안 2 커스텀) */
+.common-header-summary-bar {
+  background: rgba(10, 37, 64, 0.35);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: var(--radius-md);
+  padding: 8px 9px;
+  margin-top: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.14);
+}
+
+.hero-summary-body {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.hero-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 8px;
+  border-radius: 9px;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.prop-col {
+  background: linear-gradient(180deg, rgba(14, 165, 233, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.income-col {
+  background: linear-gradient(180deg, rgba(245, 158, 11, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+.hero-col-badge {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11.5px;
+  font-weight: 800;
+  padding: 2.5px 7px;
+  border-radius: 5px;
+  letter-spacing: -0.2px;
+}
+
+.badge-prop {
+  background: rgba(14, 165, 233, 0.3);
+  color: #BAE6FD;
+  border: 1px solid rgba(56, 189, 248, 0.45);
+}
+
+.badge-income {
+  background: rgba(245, 158, 11, 0.3);
+  color: #FDE68A;
+  border: 1px solid rgba(251, 191, 36, 0.45);
+}
+
+.hero-column-divider {
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.22), transparent);
+  margin: 2px 0;
+}
+
+.dot-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.prop-dot {
+  background: #38BDF8;
+  box-shadow: 0 0 6px rgba(56, 189, 248, 0.9);
+}
+
+.income-dot {
+  background: #FBBF24;
+  box-shadow: 0 0 6px rgba(251, 191, 36, 0.9);
+}
+
+/* 금액 1/3 확대 (약 19.5px) */
+.hero-primary-val {
+  font-size: 19.5px;
+  font-weight: 900;
+  color: #FFFFFF;
+  letter-spacing: -0.4px;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  margin: 1px 0;
+  white-space: nowrap;
+}
+
+/* 본인 텍스트 및 칩 1/3 확대 */
+.hero-secondary-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 3px 9px;
+  border-radius: 6px;
+  font-variant-numeric: tabular-nums;
+  max-width: 100%;
+}
+
+.hero-secondary-chip .sec-label {
+  color: #94A3B8;
+  font-weight: 700;
+  font-size: 12.5px;
+}
+
+.hero-secondary-chip .sec-val {
+  color: #F8FAFC;
+  font-weight: 800;
+  font-size: 13.5px;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   메인 콘텐츠 영역 (모바일 여백 및 Safe-Area 최적화)
+   ========================================================================== */
+.main-content {
+  padding: 12px 12px max(84px, calc(env(safe-area-inset-bottom, 20px) + 68px)) 12px;
+  flex: 1;
+}
+
+.tab-pane {
+  display: none;
+}
+
+.tab-pane.active {
+  display: block;
+  animation: fadeIn 0.22s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ==========================================================================
+   랜딩 스플래시 인트로 화면 (스마트폰 100dvh 풀스크린)
+   ========================================================================== */
+.landing-splash-container {
+  min-height: calc(100vh - 80px);
+  min-height: calc(100dvh - 80px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px 18px;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.splash-badge {
+  display: inline-block;
+  font-size: 11.5px;
+  font-weight: 800;
+  background: var(--color-mediterranean-haze);
+  color: var(--color-santorini-blue);
+  border: 1px solid #B8DBEC;
+  padding: 3.5px 12px;
+  border-radius: var(--radius-full);
+  margin-bottom: 20px;
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.splash-main-title {
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--color-deep-cobalt-navy);
+  line-height: 1.35;
+  letter-spacing: -0.5px;
+  margin: 0 0 14px 0;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: splashFadeInUp 0.7s 0.15s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  word-break: keep-all;
+}
+
+.splash-sub-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-aegean-slate);
+  line-height: 1.5;
+  letter-spacing: -0.3px;
+  margin: 0 0 28px 0;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: splashFadeInUp 0.7s 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  word-break: keep-all;
+}
+
+.splash-indicator-wrap {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  animation: fadeIn 0.5s 0.9s ease-out forwards;
+}
+
+.splash-pulse-dot {
+  width: 10px;
+  height: 10px;
+  background: var(--color-santorini-blue);
+  border-radius: 50%;
+  animation: pulseDot 1.4s infinite ease-in-out;
+}
+
+.splash-guide-hint {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--color-muted-harbor);
+}
+
+@keyframes splashFadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseDot {
+  0%, 100% {
+    transform: scale(0.85);
+    box-shadow: 0 0 0 0 rgba(0, 102, 153, 0.4);
+  }
+  50% {
+    transform: scale(1.2);
+    box-shadow: 0 0 0 8px rgba(0, 102, 153, 0);
+  }
+}
+
+/* 뷰 카드 공통 */
+.menu-view-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ==========================================================================
+   글로벌 하단 내비게이션 바 (모든 페이지 공통 5개 탭: 홈, 기본정보, 3대 옵션, 피부양자, 지역건보료)
+   ========================================================================== */
+.app-bottom-nav-bar {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 430px;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-top: 1px solid #E2ECF2;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  padding: 6px 2px max(10px, env(safe-area-inset-bottom, 10px)) 2px;
+  z-index: 1000;
+  box-shadow: 0 -3px 14px rgba(10, 37, 64, 0.07);
+}
+
+.bottom-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  background: none;
+  border: none;
+  padding: 5px 1px;
+  color: #64748B;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  border-radius: 8px;
+}
+
+.bottom-nav-item:active {
+  transform: scale(0.92);
+}
+
+.bnav-svg-icon {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  stroke-width: 2.1;
+  transition: transform var(--transition-fast), stroke var(--transition-fast);
+}
+
+.bottom-nav-label {
+  font-size: 10.5px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+  color: #64748B;
+  transition: color var(--transition-fast), font-weight var(--transition-fast);
+  white-space: nowrap;
+}
+
+.bottom-nav-item.active {
+  color: var(--color-santorini-blue);
+}
+
+.bottom-nav-item.active .bnav-svg-icon {
+  stroke: var(--color-santorini-blue);
+  transform: translateY(-1px);
+}
+
+.bottom-nav-item.active .bottom-nav-label {
+  color: var(--color-santorini-blue);
+  font-weight: 900;
+}
+
+/* ==========================================================================
+   스마트폰 반응형 최적화 (iPhone SE, Galaxy Z Flip, Mini 대응)
+   ========================================================================== */
+@media (max-width: 374px) {
+  .app-header {
+    padding: max(16px, env(safe-area-inset-top, 16px)) 12px 14px 12px;
+  }
+  .app-title {
+    font-size: 19px;
+  }
+  .app-tagline {
+    font-size: 11px;
+  }
+  .common-header-summary-bar {
+    padding: 6px;
+    gap: 6px;
+  }
+  .summary-card {
+    padding: 6px 7px;
+    gap: 4px;
+  }
+  .summary-card-badge {
+    font-size: 10px;
+  }
+  .summary-kv-label {
+    font-size: 10px;
+  }
+  .summary-kv-value {
+    font-size: 11.5px;
+  }
+  .main-content {
+    padding: 10px 8px max(74px, calc(env(safe-area-inset-bottom, 16px) + 58px)) 8px;
+  }
+  .bottom-nav-label {
+    font-size: 10px;
+  }
+  .bnav-svg-icon {
+    width: 19px;
+    height: 19px;
+  }
+}
