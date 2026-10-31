@@ -28,7 +28,7 @@ export class Menu0LandingModule {
           </div>
           <h2 class="splash-main-title">
             퇴직후 건보료 폭탄을<br/>
-            미리 준비하세요
+            <span class="splash-title-line2">미리 준비하세요</span>
           </h2>
         </div>
         
