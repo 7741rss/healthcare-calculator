@@ -12,7 +12,7 @@
  * 4. 3단계 법정 산출근거 상세 카드:
  *    - Step 1: 🏠 재산보험료 (과표합산 ➔ 1억 공제 ➔ 1~60등급 재산부과점수 ➔ 211.5원) + [📊 재산 등급표 보기 ➔] 모달
  *    - Step 2: 💵 소득보험료 (소득별 법정 반영률 ➔ 1,000만 미만 면제 ➔ 7.19% 정률제) + [📋 소득 부과기준 보기 ➔] 모달
- *    - Step 3: 🛡️ 장기요양보험료 (건보료의 13.1405%) 및 최종 세대합산 월 납부액
+ *    - Step 3: 🛡️ 장기요양보험료 (건보료의 13.90%) 및 최종 세대합산 월 납부액
  */
 
 import { appState } from '../state.js?v=20260921_01';
@@ -231,15 +231,15 @@ export class Menu2LocalModule {
                   <span class="calc-v-val">${formatNumber(propFee)}원 + ${formatNumber(incomeFee)}원 = <strong>${formatNumber(pureHealthFee)}원</strong></span>
                 </div>
                 <div class="calc-kv-row">
-                  <span class="calc-k-label">장기요양보험료율 (법정 13.1405%)</span>
-                  <span class="calc-v-val font-bold">순수 건보료 × 0.9448% ÷ 7.19%</span>
+                  <span class="calc-k-label">장기요양보험료율 (법정 13.90%)</span>
+                  <span class="calc-v-val font-bold">순수 건보료 × 0.9994% ÷ 7.19%</span>
                 </div>
               </div>
 
               <div class="calc-summary-result-box box-ltc-result">
                 <span class="calc-result-sub-label">장기요양보험료 산정액</span>
                 <span class="calc-result-sub-calc">
-                  ${formatNumber(pureHealthFee)}원 × 13.1405% = <strong>${formatNumber(ltcFee)}원</strong>
+                  ${formatNumber(pureHealthFee)}원 × 13.90% = <strong>${formatNumber(ltcFee)}원</strong>
                 </span>
               </div>
             </div>

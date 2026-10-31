@@ -68,8 +68,8 @@ export class IncomeCriteriaModal {
               </div>
               <div class="metric-card">
                 <div class="metric-label">장기요양보험료율</div>
-                <div class="metric-value text-purple">0.9448%</div>
-                <div class="metric-sub">건보료 대비 13.14%</div>
+                <div class="metric-value text-purple">0.9994%</div>
+                <div class="metric-sub">건보료 대비 13.90%</div>
               </div>
               <div class="metric-card">
                 <div class="metric-label">최저 건강보험료</div>
@@ -175,12 +175,18 @@ export class IncomeCriteriaModal {
                   <tbody>
                     <tr class="active-current-year-row">
                       <td class="text-center font-bold text-primary">
-                        2026
-                        <span class="badge-current-tag">현재 적용</span>
+                        2027
+                        <span class="badge-current-tag">개정 확정</span>
                       </td>
                       <td class="text-center font-bold text-slate-800">211.5원</td>
                       <td class="text-center font-bold text-blue">7.19%</td>
-                      <td class="text-center font-bold text-purple">0.9448%</td>
+                      <td class="text-center font-bold text-purple">0.9994%</td>
+                    </tr>
+                    <tr>
+                      <td class="text-center font-bold">2026</td>
+                      <td class="text-center text-slate-700">211.5원</td>
+                      <td class="text-center text-slate-700">7.19%</td>
+                      <td class="text-center text-slate-700">0.9448%</td>
                     </tr>
                     <tr>
                       <td class="text-center font-bold">2025</td>

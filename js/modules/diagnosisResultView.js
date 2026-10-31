@@ -75,7 +75,7 @@ export class DiagnosisResultViewModule {
                 <span class="calc-v-val">${formatNumber(monthlyExcess)}원 × 7.19% = ${formatNumber(addHealthFee)}원/월</span>
               </div>
               <div class="calc-kv-row">
-                <span class="calc-k-label">추가 장기요양료(13.14%)</span>
+                <span class="calc-k-label">추가 장기요양료(13.90%)</span>
                 <span class="calc-v-val">+${formatNumber(addLtcFee)}원/월</span>
               </div>
             ` : `

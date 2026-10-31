@@ -17,23 +17,23 @@
  *    - 소득정률제: 소득 1,000만 원 이상 시 소득월액(연소득 ÷ 12) × 7.19% (1,000만 원 미만 소득 건보료 0원)
  *    - 최저 건강보험료: 월 19,780원 (하한선)
  *    - 재산 부과점수당 단가: 211.5원 (국민건강보험법 시행령 [별표 4] 1~60등급 매칭)
- *    - 장기요양보험료율: 소득 대비 0.9448% / 건강보험료의 13.1405% (0.009448 ÷ 0.0719)
+ *    - 장기요양보험료율: 소득 대비 0.9994% / 건강보험료의 13.90% (0.009994 ÷ 0.0719 = 13.89986%)
  * 
  * 3. 임의계속가입 산정 기준:
  *    - 퇴직 전 직장 본인부담 건강보험료(장기요양 포함) 최대 36개월 유지
- *    - 보수외 소득 2,000만 원 초과 시 소득월액 추가보험료(7.19% + 장기요양) 합산
+ *    - 보수외 소득 2,000만 원 초과 시 소득월액 추가보험료(7.19% + 장기요양 13.90%) 합산
  */
 
 export const HEALTH_DATABASE_2026 = {
-  VERSION: '2026.09.21',
-  LAST_UPDATED: '2026-09-21',
+  VERSION: '2027.01.01_v20261031',
+  LAST_UPDATED: '2026-10-31',
   
   // 1. 법정 공식 요율 및 단가 마스터
   RATES: {
-    HEALTH_RATE: 0.0719,                  // 직장 및 지역 소득정률 건강보험료율 7.19%
-    POINT_UNIT_PRICE: 211.5,              // 재산 부과점수당 211.5원
-    LONG_TERM_CARE_INCOME_RATE: 0.009448, // 소득(보수월액) 대비 장기요양보험료율 0.9448%
-    LONG_TERM_CARE_CONVERSION_RATE: 0.009448 / 0.0719, // 건보료 대비 장기요양보험료율 13.1405%
+    HEALTH_RATE: 0.0719,                  // 직장 및 지역 소득정률 건강보험료율 7.19% (동결)
+    POINT_UNIT_PRICE: 211.5,              // 재산 부과점수당 211.5원 (동결)
+    LONG_TERM_CARE_INCOME_RATE: 0.009994, // 소득(보수월액) 대비 장기요양보험료율 0.9994% (2027년 개정 인상)
+    LONG_TERM_CARE_CONVERSION_RATE: 0.009994 / 0.0719, // 건보료 대비 장기요양보험료율 13.90% (0.009994 ÷ 0.0719)
     MIN_MONTHLY_HEALTH_FEE: 19780,        // 법정 최저 월 건강보험료 19,780원
   },
 
@@ -319,7 +319,7 @@ export function calculateLocalHealthFeeDetailed(grossPropertyTaxBase, appliedAnn
   const healthSubtotal = Math.max(minHealth, rawSumHealth);
   const isMinApplied = rawSumHealth < minHealth;
 
-  // 4. 장기요양보험료 산출: (건보료 소계 × 0.009448) ÷ 0.0719 = 13.1405%
+  // 4. 장기요양보험료 산출: (건보료 소계 × 0.009994) ÷ 0.0719 = 13.90%
   const monthlyLtcFee = Math.round((healthSubtotal * HEALTH_DATABASE_2026.RATES.LONG_TERM_CARE_INCOME_RATE) / HEALTH_DATABASE_2026.RATES.HEALTH_RATE);
 
   // 5. 총 월 납부 예상액
