@@ -24,7 +24,7 @@ export class Menu0LandingModule {
       <div class="landing-splash-container" id="landingSplashWrap">
         <h2 class="splash-main-title">
           퇴직후 건보료 폭탄을<br/>
-          미리 준비하세요
+          <span class="splash-title-row">미리 준비하세요 <span class="landing-revision-badge">2027년 개정판</span></span>
         </h2>
         
         <p class="splash-sub-title">

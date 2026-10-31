@@ -1,5 +1,5 @@
 /**
- * 2026년도 국민건강보험공단 공식 고시 기준 소득 부과 산출기준 안내 모달
+ * 2027년도 국민건강보험공단 공식 고시 기준 소득 부과 산출기준 안내 모달
  * 1) 연간 소득 1,000만 원 미만: 소득 합산 제외 (보험료 0원)
  * 2) 연간 소득 1,000만 원 이상: 소득월액(연소득 ÷ 12) × 건강보험료율(7.19%)
  * 3) 소득 반영률: 근로·공적연금 50% (50% 공제), 사업·이자·배당·기타 100% 반영
@@ -30,7 +30,7 @@ export class IncomeCriteriaModal {
             <div class="modal-title-wrap">
               <span class="modal-icon">📋</span>
               <div>
-                <h3 class="modal-title">2026년도 소득 부과기준 및 산출 방식</h3>
+                <h3 class="modal-title">2027년도 소득 부과기준 및 산출 방식</h3>
                 <p class="modal-subtitle">보건복지부 및 국민건강보험공단 공식 고시 기준</p>
               </div>
             </div>
@@ -80,7 +80,7 @@ export class IncomeCriteriaModal {
 
             <!-- 3. 소득 종류별 반영률 테이블 (상단 배치로 실용성 극대화) -->
             <div class="income-ratio-table-wrap mt-3">
-              <h4 class="table-section-title">2026년도 소득 종류별 건강보험료 반영률</h4>
+              <h4 class="table-section-title">2027년도 소득 종류별 건강보험료 반영률</h4>
               <div class="table-container custom-scrollbar">
                 <table class="data-table data-table-compact mt-1">
                   <thead>
