@@ -362,6 +362,22 @@ body {
   vertical-align: middle;
 }
 
+.badge-step-year {
+  display: inline-flex;
+  align-items: center;
+  font-size: 10.5px;
+  font-weight: 800;
+  padding: 2px 6.5px;
+  border-radius: 5px;
+  background: #FEF3C7;
+  color: #B45309;
+  border: 1px solid #FCD34D;
+  letter-spacing: -0.2px;
+  white-space: nowrap;
+  line-height: 1.2;
+  vertical-align: middle;
+}
+
 .splash-sub-title {
   font-size: 15px;
   font-weight: 700;

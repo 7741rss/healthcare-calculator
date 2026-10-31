@@ -221,6 +221,7 @@ export class Menu2LocalModule {
               <div class="detail-step-identity">
                 <span class="detail-step-badge badge-step-ltc">Step 3</span>
                 <h4 class="detail-step-name">🛡️ 장기요양보험료 산출</h4>
+                <span class="badge-step-year">2027년도 반영</span>
               </div>
             </div>
 
