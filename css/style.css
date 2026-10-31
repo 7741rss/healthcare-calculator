@@ -325,6 +325,22 @@ body {
   animation: fadeIn 0.5s ease-out forwards;
 }
 
+.splash-title-wrap {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.splash-badge-wrap {
+  margin-bottom: 10px;
+  display: flex;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: splashFadeInUp 0.7s 0.05s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
 .splash-main-title {
   font-size: 24px;
   font-weight: 900;
@@ -336,14 +352,7 @@ body {
   transform: translateY(10px);
   animation: splashFadeInUp 0.7s 0.15s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   word-break: keep-all;
-}
-
-.splash-title-row {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 6px;
+  text-align: left;
 }
 
 .landing-revision-badge {
@@ -351,7 +360,7 @@ body {
   align-items: center;
   font-size: 11.5px;
   font-weight: 800;
-  padding: 3px 8px;
+  padding: 3.5px 9px;
   border-radius: 6px;
   background: #F59E0B;
   color: #0F172A;

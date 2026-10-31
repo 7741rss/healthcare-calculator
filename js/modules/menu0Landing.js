@@ -22,10 +22,15 @@ export class Menu0LandingModule {
 
     this.container.innerHTML = `
       <div class="landing-splash-container" id="landingSplashWrap">
-        <h2 class="splash-main-title">
-          퇴직후 건보료 폭탄을<br/>
-          <span class="splash-title-row">미리 준비하세요 <span class="landing-revision-badge">2027년 개정판</span></span>
-        </h2>
+        <div class="splash-title-wrap">
+          <div class="splash-badge-wrap">
+            <span class="landing-revision-badge">2027년 개정판</span>
+          </div>
+          <h2 class="splash-main-title">
+            퇴직후 건보료 폭탄을<br/>
+            미리 준비하세요
+          </h2>
+        </div>
         
         <p class="splash-sub-title">
           재산과 소득금액 한번 입력으로<br/>
